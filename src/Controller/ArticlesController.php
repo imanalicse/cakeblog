@@ -30,6 +30,15 @@ class ArticlesController extends AppController
         $articles = $this->paginate($this->Articles);
         //debug($articles);
         $this->set(compact('articles'));
+        $title = "Articles";
+        $this->set('title');
+    }
+
+    public function test(){
+
+        var_dump($this->request->params['pass']);
+        echo "Hello world";
+        //$this->autoRender = false;
     }
 
     /**
