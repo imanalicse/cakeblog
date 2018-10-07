@@ -13,9 +13,12 @@ use App\Controller\AppController;
 class ArticlesController extends AppController
 {
 
+
     public function initialize()
     {
         parent::initialize();
+
+        $this->loadComponent('Common');
 
         $this->loadComponent('Flash'); // Include the FlashComponent
     }
@@ -35,11 +38,10 @@ class ArticlesController extends AppController
     }
 
     public function test(){
-
-        var_dump($this->request->params['pass']);
-        echo "Hello world";
-        //$this->autoRender = false;
+        echo $this->Common->test();
+        $this->autoRender = false;
     }
+
 
     /**
      * View method
