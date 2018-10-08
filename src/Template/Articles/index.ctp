@@ -30,4 +30,8 @@
     </tr>
     <?php endforeach; ?>
 
+    <?php
+        echo $this->Math->square(10);
+    ?>
+
 </table>
