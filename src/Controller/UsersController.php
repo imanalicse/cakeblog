@@ -104,4 +104,26 @@ class UsersController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function login()
+    {
+        if ($this->request->is('post')) {
+            $user = $this->Auth->identify();
+            if ($user) {
+                $this->Auth->setUser($user);
+                return $this->redirect([
+                    'controller' => 'articles'
+                ]);
+            }
+
+            //Bad Login
+            $this->Flash->error('Incorrect Login');
+        }
+    }
+
+    public function logout()
+    {
+        $this->Flash->error('You are logout out');
+        return $this->redirect($this->Auth->logout());
+    }
 }
