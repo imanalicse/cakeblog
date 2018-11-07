@@ -20,7 +20,7 @@ class ContactsController extends AppController
      */
     public function index()
     {
-        
+
         echo Configure::read("contact_email");
 
         $contacts = $this->paginate($this->Contacts);
