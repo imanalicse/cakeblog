@@ -15,6 +15,8 @@ $cakeDescription = '';
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('style.css') ?>
 
+    <?= $this->Html->css('ContactManager.style'); ?>
+
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>

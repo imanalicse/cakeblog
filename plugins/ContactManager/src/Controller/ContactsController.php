@@ -13,6 +13,8 @@ use ContactManager\Controller\AppController;
 class ContactsController extends AppController
 {
 
+    public $layout = 'ContactManager.admin';
+
     /**
      * Index method
      *
@@ -21,11 +23,9 @@ class ContactsController extends AppController
     public function index()
     {
 
-        
+        $contacts = $this->paginate($this->Contacts);
 
-//        $contacts = $this->paginate($this->Contacts);
-//
-//        $this->set(compact('contacts'));
+        $this->set(compact('contacts'));
         $this->set('contact_email', Configure::read("contact_email"));
     }
 
