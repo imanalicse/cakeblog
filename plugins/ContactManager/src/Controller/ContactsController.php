@@ -21,11 +21,12 @@ class ContactsController extends AppController
     public function index()
     {
 
-        echo Configure::read("contact_email");
+        
 
-        $contacts = $this->paginate($this->Contacts);
-
-        $this->set(compact('contacts'));
+//        $contacts = $this->paginate($this->Contacts);
+//
+//        $this->set(compact('contacts'));
+        $this->set('contact_email', Configure::read("contact_email"));
     }
 
     /**
