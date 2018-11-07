@@ -198,5 +198,7 @@ Type::build('timestamp')
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
 
+Configure::write("contact_email", 'iman@bitmascot.com');
+
 Plugin::load('Migrations');
 Plugin::load('ContactManager', ['bootstrap' => false, 'routes' => true]);

@@ -1,6 +1,7 @@
 <?php
 namespace ContactManager\Controller;
 
+use Cake\Core\Configure;
 use ContactManager\Controller\AppController;
 
 /**
@@ -19,6 +20,9 @@ class ContactsController extends AppController
      */
     public function index()
     {
+        
+        echo Configure::read("contact_email");
+
         $contacts = $this->paginate($this->Contacts);
 
         $this->set(compact('contacts'));
